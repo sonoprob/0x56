@@ -1,0 +1,3 @@
+alias 0x56="cd $DEV/versioned/0x56 && git status && . aliases"
+
+echo "0x56 aliases read"

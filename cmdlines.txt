@@ -1,0 +1,16 @@
+# todo
+# use separate aliases
+# instead of /Users/a/dev/versioned/vc0/conf/aliases-combined.sh
+# should work on linux ?
+
+# remove hung screen
+lsof | grep /dev/tty.SLAB_USBtoUART
+-> screen    87098    a    ... /dev/tty.SLAB_USBtoUART
+kill 87098
+
+#amount of serial connections
+ls /dev/tty.SLAB_USBtoUART* | wc -l | sed 's/ //g'
+
+### irc client
+irssi -c 78.47.95.83 -p 4567 -n jk
+irssi -c irc.a-um.nl -p 4567 -n jk
