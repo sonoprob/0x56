@@ -1,4 +1,3 @@
 # 0x56
 
-yep
-y
+irc bots 
