@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.wikiwand.com/en/Ascii85#/precache_from_extension=true -->
+<html lang="en" ng-app="wikiwand" class="no-js ng-scope"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+	<!--header generic -->
+	
+	<!--this is the original url for google fonts-->
+	<link href="css" rel="stylesheet" type="text/css">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/emffkefkbkpkgpdeeooapgaicgmcbolj">
+	<link rel="shortcut icon" href="http://www.wikiwand.com/favicon.ico" type="image/x-icon">
+	<link rel="image_src" href="http://d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+	<!--<script type="text/javascript"  src="https://s3.amazonaws.com/assets.wikiwand.com/ads.js"></script>-->
+	<link rel="apple-touch-icon" href="http://d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon_apple.png">
+	
+
+	
+
+	
+	</head><body class="lg_latin bsp1 bsp2 lang_en bsp3 ng-scope [ medium_txt serif light narrow_column ]" ng-class="$root.userBodyStyle" ng-controller="ShellController" ng-init="initializeShellController()" style=""><img id="imagePlaceHolder" src="" height="0" width="0" style="opacity: 1; position: fixed; width: 100%; height: auto; top: 0px; left: 0px;">
+	<script async="" src="analytics.js"></script><script>
+
+		console.time('test');
+		var precache_from_extension = false;
+		if (window.location.hash.indexOf('precache_from_extension=true') > -1) {
+			precache_from_extension = true;
+		}
+		var pageLoadStart = new Date().getTime();
+		var pageHTMLReceived = (new Date()).getTime();
+		var genericData = {
+			debug: {
+				pageLoadedTimestamp: (new Date()).getTime()
+			}
+		};
+		var localContentHtml;
+		var localContentHtmlPartial;
+		var attempts = 0;
+		function tempConditioning(mystring) {
+			//this is to migrate old article contents until we do a database recaching (advance version)
+			//replace old pic-placeholder with one which supports both protocols
+			if (location.protocol == 'https:') {
+				var newstring = mystring.split('http://assets.cdn.wikiwand.com/img/pic-placeholder.gif').join('//d3isfnyiuldmfu.cloudfront.net/img/pic-placeholder.gif');
+			} else {
+				newstring = mystring;
+			}
+			return newstring;
+		}
+
+		function httpGet(theUrl, type) {
+			var xmlHttp = null;
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function() {
+				if (xmlHttp.readyState == 4) // Finished
+				{
+					if (xmlHttp.status == 200) {
+						if (theUrl.indexOf('_PARTIAL_DOWNLOAD') == -1) {
+							//console.log('got full text');
+							localContentHtml = xmlHttp.responseText;
+						} else {
+							//console.log('got partial text');
+							localContentHtmlPartial = xmlHttp.responseText;
+						}
+					}
+					else {
+						console.log('failed with status ',xmlHttp.status);
+						attempts++;
+						if (attempts < 10 && (theUrl.indexOf('_PARTIAL_DOWNLOAD') == -1)) {
+							console.log("DOWNLOAD FAILED, TRYING AGAIN ", theUrl);
+							if (xmlHttp.status == 0) {
+								if (theUrl.indexOf('s3.amazonaws.com') != -1) {
+									if (attempts==9) {
+
+										setTimeout(function() {
+											var element;
+											if (typeof(noAdblock) == 'undefined') {
+												element = '#adblockNotice';
+											} else {
+												element = '#httpsEverywhereNotice';
+											}
+											if ($(element).length > 0) {
+												console.log(' element exists');
+												$(element).show();
+												$(element).css('opacity', 1);
+												$(element).detach().prependTo('#content');
+											}
+										}, 6000);
+									}
+								}
+								var urlOnS3 = 'https://s3.amazonaws.com/ww-article-cache-1/en/Ascii85';
+								urlOnS3 = urlOnS3.replace('http://', '//').replace('https://', '//');
+								urlOnS3 = urlOnS3.replace(/\+/g, '%2B');
+								httpGet(urlOnS3, 'html');
+								httpGet(urlOnS3, 'html');
+							} else {
+								//console.log('status ', xmlHttp);
+								setTimeout(function() {
+									httpGet(theUrl, 'html');
+								}, 500);
+							}
+						}
+					}
+				}
+			};
+			xmlHttp.open("GET", theUrl, true);
+			xmlHttp.send(null);
+		}
+	</script>
+	
+	<script>
+		//console.log('have cdn file in generic header, this is cached');
+		var loadedFromCache = true;
+		var urlOnCdn = 'https://db0nus869y26v.cloudfront.net/en/Ascii85?rev=1441748493784';
+		urlOnCdn = urlOnCdn.replace('http://', '//').replace('https://', '//');
+		urlOnCdn = urlOnCdn.replace(/\+/g, '%2B');
+		httpGet(urlOnCdn, 'html');
+		//var partialDownloadUrl=urlOnCdn.replace('?rev','_PARTIAL_DOWNLOAD?rev');
+		//httpGet(partialDownloadUrl,'html');
+		try {
+			var mainImageUrl = '';
+			mainImageUrl = mainImageUrl.replace('https://', '//').replace('http://', '//');
+			var image = document.getElementById("imagePlaceHolder");
+			image.src = mainImageUrl;
+		}
+		catch (e) {console.log('error predownloading image', e);}
+	</script>
+	
+
+	<script src="jquery.min.js"></script>
+	<script src="angular.min.js"></script>
+
+	<!--
+	
+	<link rel="stylesheet" href="//d3isfnyiuldmfu.cloudfront.net/css/fonts.92ff4698.css" type="text/css" media="screen"/>
+	
+	-->
+
+	
+
+	 
+
+	
+
+	<link rel="stylesheet" href="wikiwand.early.min.a0cc97d2.css" type="text/css" media="screen">
+	<script type="text/javascript" src="wikiwand.early.min.9d542108.js"></script>
+	
+	
+
+	
+
+	
+
+
+
+	<!-- BEGIN TRACKJS -->
+	<script type="text/javascript">
+		if (!precache_from_extension) {
+			window._trackJs = {
+				token: '9bcd9b3d130a4b8eb9f58ff06e6781b5',
+				callback: {enabled: false},
+				console: {enabled: true, display: true, error: false},
+				network: {enabled: false},
+				visitor: {enabled: false},
+				window: {enabled: false},
+				onError: function(payload, error) {
+
+					// List borrowed from the awesome @pamelafox
+					// https://gist.github.com/pamelafox/1878283
+					var i, commonCrypticExtensionErrors = [
+						"top.GLOBALS",
+						"originalCreateNotification",
+						"canvas.contentDocument",
+						"MyApp_RemoveAllHighlights",
+						"http://tt.epicplay.com",
+						"Can't find variable: ZiteReader",
+						"jigsaw is not defined",
+						"ComboSearch is not defined",
+						"http://loading.retry.widdit.com/",
+						"atomicFindClose",
+						"fb_xd_fragment",
+						"Script error",
+						"__adg_gm_commands_api",
+						"A Chrome Web Store installation is already pending.",
+						"‘-×´]/: Range out of order in character class"
+					];
+					for (i = 0; i < commonCrypticExtensionErrors.length; i++) {
+						if (payload.message.indexOf(commonCrypticExtensionErrors[i]) > -1) {
+							// returning any kind of falsy value will reject error
+							return false;
+						}
+					}
+					return true; // Return any kind of truthy value here to allow transmission of error
+				}
+			};
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type", "text/javascript");
+			fileref.setAttribute("src", "//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js");
+			if (typeof fileref != "undefined")    document.getElementsByTagName("head")[0].appendChild(fileref);
+		}
+	</script>
+
+
+
+
+
+	
+	
+
+	
+	<script>
+		// disable all logs
+		if (document.location.search.indexOf('debug_logs=1') == -1) {
+			console.log = function() {};
+			console.time = function() {};
+			console.timeEnd = function() {};
+		}
+	</script>
+
+
+	
+
+	<script>
+
+		
+			var serverData={"layout":"wikiwand","publisherMonetization":"false","showTOC":"true","agent":{"string":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36","ua":{"family":"Chrome","major":"45","minor":"0","patch":"2454"},"userAgent":{"family":"Chrome","major":"45","minor":"0","patch":"2454"},"os":{"family":"Mac OS X","major":"10","minor":"10","patch":"2","patchMinor":null},"device":{"family":"Other"},"family":"Chrome","major":45,"minor":0,"patch":2454,"isMobileRes":false,"clientLanguages":"en-US,en;q=0.8,nl;q=0.6","extensionInstalled":true,"fromSearchWidget":false},"config":{"environment":"production","features":{"news":false,"map":true,"toc":true,"gallery":true,"partials":true,"apiCache":true,"invites":false,"citations":false,"articlePromo":true,"classification":false,"moduleYouTubeVideo":true,"webSocket":false,"snippet":true},"agent":{"string":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36","ua":{"family":"Chrome","major":"45","minor":"0","patch":"2454"},"userAgent":{"family":"Chrome","major":"45","minor":"0","patch":"2454"},"os":{"family":"Mac OS X","major":"10","minor":"10","patch":"2","patchMinor":null},"device":{"family":"Other"},"family":"Chrome","major":45,"minor":0,"patch":2454,"isMobileRes":false,"clientLanguages":"en-US,en;q=0.8,nl;q=0.6","extensionInstalled":true,"fromSearchWidget":false},"facebook":{"appId":"823404911083396"}},"cpu":1,"callToInstallExtension":false,"settings":{"whitelist":["/en/Kinsey_scale","/en/Mokomokai","/en/Binomial_distribution","/en/Lee_Van_Cleef","/en/Gutter_oil","/en/Yūki_Kaji"],"tests":{"mon_footer":{"recommendations":0,"adsense":0},"mon_footer_b":{"wikipedia":0},"mon_bottom":{"none":100},"mon_ocd":{"msg":0}},"msg_to_all_users":{"show":false,"text":"Due to a global Amazon S3 outage, article load times may be longer than usual.<BR>In the meantime, you can use the toolbar to skip to Wikipedia. We appreciate your patience."},"monPlus":false}};
+		
+		
+			var articleData={"cache":{"cacheDBVer":51,"cacheDate":1441748493784,"hash":"1bae3f3519ddb0a4ded3c01e730c0cfd","key":"/en/Ascii85","wikiRevision":"679870757","canonical":"/en/Ascii85","isCanonical":true,"S3FileUrl":"https://s3.amazonaws.com/ww-article-cache-1/en/Ascii85","CDNFileUrl":"https://db0nus869y26v.cloudfront.net/en/Ascii85?rev=1441748493784"},"langCodeUrl":"en","rawArticlePath":"Ascii85","fonts":{},"bodyClasses":["lg_latin"],"hasInfobox":false,"facts":[],"photos":[],"typeData":"","title":"Ascii85","geo":null,"TOC":{"type":"ul","id":"toc_btn_article-root-section","href":"article-root-section","text":"","children":[{"type":"od","classesHtml":"","special":false,"id":"toc_btn_overview","href":"overview","text":"Introduction","children":[]},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_Basic_idea","href":"Basic_idea","text":"Basic idea","children":[]},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_History","href":"History","text":"History","children":[{"type":"li","classesHtml":"","special":false,"id":"toc_btn_btoa_version","href":"btoa_version","text":"btoa version","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_ZMODEM_version","href":"ZMODEM_version","text":"ZMODEM version","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Adobe_version","href":"Adobe_version","text":"Adobe version","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_ZeroMQ_Version_.28Z85.29","href":"ZeroMQ_Version_.28Z85.29","text":"ZeroMQ Version (Z85)","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Example_for_Ascii85","href":"Example_for_Ascii85","text":"Example for Ascii85","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Compatibility","href":"Compatibility","text":"Compatibility","children":[]}],"hasChildren":true},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_RFC_1924_version","href":"RFC_1924_version","text":"RFC 1924 version","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_See_also","href":"See_also","text":"See also","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_References","href":"References","text":"References","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_External_links","href":"External_links","text":"External links","children":[]}],"hasChildren":true},"pageIsArticle":true,"links":{"selfRead":"http://wikiwand.com/en/Ascii85","wikipediaRead":"https://en.wikipedia.org/wiki/Ascii85?oldformat=true","quickiwikiRead":"http://www.quickiwiki.com/en/Ascii85","wikipediaEdit":"https://en.wikipedia.org/w/index.php?title=Ascii85&action=edit","wikipediaHistory":"https://en.wikipedia.org/w/index.php?title=Ascii85&action=history","wikipediaPrint":"https://en.wikipedia.org/w/index.php?title=Ascii85&printable=yes","wikipediaTalk":"https://en.wikipedia.org/wiki/Talk:Ascii85?oldformat=true","wikipediaDownload":"https://en.wikipedia.org/w/index.php?title=Special:Book&bookcmd=render_article&arttitle=Ascii85&writer=rl"},"meta":{"title":"Ascii85 | Wikiwand","keywords":"qw, Ascii85, English","description":"Ascii85, also called Base85, is a form of binary-to-text encoding developed by Paul E. Rutter for the btoa utility. By using five ASCII characters to represent four bytes of binary data , it is more efficient than uuencode or Base64, which use four characters to represent three bytes of data .","robots":"index,follow","url":"http://www.wikiwand.com/en/Ascii85","image":"//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png"},"fromWikipedia":"From Wikipedia, the free encyclopedia","disambiguations":[],"searchTranslation":"Search","mainImage":{"mode":"none"},"availableLanguages":[{"langEnglishName":"English","langNativeName":"English","langAbberviation":"en","langCodeHTML":0,"langCodeURL":"en","articleTitle":"Ascii85","articleLink":"/en/Ascii85","score":1},{"langEnglishName":"German","langNativeName":"Deutsch","langAbberviation":"de","langCodeHTML":0,"langCodeURL":"de","articleTitle":"Base85","articleLink":"/de/Base85","score":1},{"langEnglishName":"Russian","langNativeName":"русский","langAbberviation":"ru","langCodeHTML":0,"langCodeURL":"ru","articleTitle":"ASCII85","articleLink":"/ru/ASCII85","score":0},{"langEnglishName":"Ukranian","langNativeName":"українська","langAbberviation":"uk","langCodeHTML":0,"langCodeURL":"uk","articleTitle":"Ascii85","articleLink":"/uk/Ascii85","score":0}]};
+		
+
+	</script>
+	<script>
+		if (location.host=='translate.googleusercontent.com' && location.search){
+
+			var requestedLang=location.search.split('tl=')[1];
+			if (requestedLang) {
+				requestedLang = requestedLang.split('&')[0];
+				var desiredLink = articleData.links.selfRead.replace('http://', 'https://');
+				for (idx in articleData.availableLanguages) {
+					var lang = articleData.availableLanguages[idx];
+					if (lang.langCodeURL == requestedLang) {
+						desiredLink = 'https://www.wikiwand.com' + lang.articleLink;
+						break;
+					}
+				}
+				window.location = desiredLink;
+				var dontReport=true;
+			}
+		}
+	</script>
+
+	<title>Ascii85 - Wikiwand</title>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@wikiwand">
+	<meta name="twitter:app:name:iphone" content="Wikiwand">
+	<meta name="twitter:app:name:ipad" content="Wikiwand">
+	<meta name="twitter:app:id:iphone" content="947444965">
+	<meta name="twitter:app:id:ipad" content="947444965">
+	
+	<meta name="twitter:app:url:iphone" content="wikiwand-article://en/Ascii85">
+	<meta name="twitter:app:url:ipad" content="wikiwand-article://en/Ascii85">
+	<meta name="apple-itunes-app" content="app-id=947444965, app-argument=wikiwand-article://en/Ascii85">
+	
+	<meta property="al:ios:url" content="wikiwand://applinks">
+	<meta property="al:ios:app_store_id" content="947444965">
+	<meta property="al:ios:app_name" content="Wikiwand">
+
+	<meta name="robots" content="index,follow">
+
+	
+		<meta property="og:type" content="article">
+		<meta property="og:site_name" content="Wikiwand">
+		<meta property="og:url" content="http://www.wikiwand.com/en/Ascii85">
+
+		<meta property="og:title" content="Ascii85 | Wikiwand">
+		<meta property="twitter:title" content="Ascii85 | Wikiwand">
+
+		<meta property="og:description" content="Ascii85, also called Base85, is a form of binary-to-text encoding developed by Paul E. Rutter for the btoa utility. By using five ASCII characters to represent four bytes of binary data , it is more efficient than uuencode or Base64, which use four characters to represent three bytes of data .">
+		<meta name="description" content="Ascii85, also called Base85, is a form of binary-to-text encoding developed by Paul E. Rutter for the btoa utility. By using five ASCII characters to represent four bytes of binary data , it is more efficient than uuencode or Base64, which use four characters to represent three bytes of data .">
+		<meta name="twitter:description" content="Ascii85, also called Base85, is a form of binary-to-text encoding developed by Paul E. Rutter for the btoa utility. By using five ASCII characters to represent four bytes of binary data , it is more efficient than uuencode or Base64, which use four characters to represent three bytes of data .">
+		
+		<meta property="og:image" content="//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+		<meta property="twitter:image:src" content="//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+		
+
+		<meta name="keywords" content="qw, Ascii85, English">
+	
+
+    
+
+
+
+
+
+
+
+
+
+
+	<div id="body_wrapp" ng-click="clickedOutside()" ng-mousedown="clickedAnywhere($event)">
+
+	
+<!-- ngIf: precache_from_extension --><div ng-if="precache_from_extension" class="ng-scope">For faster navigation, this Iframe is preloading the Wikiwand page for <b>Ascii85</b>.
+
+</div><!-- end ngIf: precache_from_extension -->
+
+<!-- ngIf: !hideToolbar -->
+
+
+
+
+
+
+
+<!--*************************** content  *************************-->
+<div id="content" ng-class="{active:!$root.tocShow}" class="small_image active">
+
+
+	<!--************ news Article section ************-->
+	
+
+
+	
+
+	
+	
+
+	<!--************ main_image ************-->
+		
+	<!--************ main_image ENDS ************-->
+	
+	
+
+	
+
+<article id="article_content_wrapper" ng-controller="ArticleContentController" ng-class="{minimal_margin: $root.minimalStyle, loaded: showArticleContents, narrow_column: $root.columnWidth==&#39;narrow&#39;, wide_column: $root.columnWidth==&#39;wide&#39;,
+	full_column: $root.columnWidth==&#39;full&#39;, no_cover: articleMarginTop==&#39;noCover&#39;, margin_initial: articleMarginTop==&#39;initial&#39;, margin_low: articleMarginTop==&#39;low&#39;, margin_middle: articleMarginTop==&#39;middle&#39;, margin_high: articleMarginTop==&#39;high&#39;}" class="ng-scope narrow_column no_cover">
+
+	<!-- ngIf: $root.showInterestTags -->
+
+
+
+
+	<section class="title_wrapper">
+		<h1 class="firstHeading">
+			<span class="">Ascii85</span>
+
+
+			
+
+			<a href="https://en.wikipedia.org/w/index.php?title=Ascii85&action=edit" target="_blank" class="title_icon edit_article edit_section tooltip_top" title="Edit Article"></a>
+
+			<!--<span class="title_icon geo-location tooltip_top" title="Browse map" ng-if="$root.map.exists" ng-class="{loading: $root.mapLoading}" onClick="loadGoogleMaps();"></span>
+
+			<span class="title_icon like_buttons unselectable" onclick="event.stopPropagation()"></span>-->
+
+		</h1>
+
+
+		<!-- READ MORE SECTION -->
+		<nav id="read_more" ng-style="{opacity:showReadMore}" style="opacity: 0;">
+
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px">
+				<path d="M9.512,8.692L8.073,7.331C8.24,7.026,8.344,6.682,8.344,6.31c0-1.179-0.956-2.135-2.135-2.135	c-1.18,0-2.137,0.955-2.137,2.135s0.957,2.136,2.137,2.136c0.416,0,0.801-0.124,1.129-0.33l1.438,1.359	C8.993,9.188,9.238,8.924,9.512,8.692z"></path>
+				<path d="M15.603,8.522l1.912-3.22c0.188,0.054,0.384,0.093,0.589,0.093c1.182,0,2.138-0.956,2.138-2.136 c0-1.179-0.956-2.134-2.138-2.134c-1.18,0-2.135,0.955-2.135,2.134c0,0.586,0.236,1.115,0.618,1.501l-1.907,3.21	C15.008,8.119,15.316,8.305,15.603,8.522z"></path>
+				<path d="M22.199,11.217c-0.918,0-1.696,0.583-1.998,1.397l-2.657-0.262c0,0.02,0.003,0.039,0.003,0.059 c0,0.346-0.039,0.685-0.107,1.012l2.657,0.263c0.16,1.019,1.038,1.801,2.103,1.801c1.18,0,2.135-0.955,2.135-2.135	C24.334,12.173,23.379,11.217,22.199,11.217z"></path>
+				<path d="M14.865,19.612l-0.594-2.597c-0.336,0.117-0.685,0.201-1.049,0.243l0.596,2.596c-0.683,0.357-1.153,1.063-1.153,1.887 c0,1.18,0.954,2.134,2.137,2.134c1.179,0,2.134-0.954,2.134-2.134C16.937,20.584,16.015,19.646,14.865,19.612z"></path>
+				<path d="M7.896,13.441L4.587,14.55c-0.382-0.583-1.039-0.97-1.787-0.97c-1.18,0-2.135,0.955-2.135,2.135 c0,1.181,0.955,2.136,2.135,2.136c1.179,0,2.136-0.955,2.136-2.136c0-0.049-0.011-0.095-0.015-0.144l3.319-1.111	C8.092,14.138,7.973,13.798,7.896,13.441z"></path>
+				<circle cx="12.666" cy="12.411" r="3.662"></circle>
+			</svg>
+
+
+			<!-- ngIf: showTextEnglish --><h4 ng-if="showTextEnglish" class="ng-scope">Connected to:</h4><!-- end ngIf: showTextEnglish -->
+
+			<!-- ngRepeat: readMoreArticle in readMoreArticles | limitTo:3 -->
+
+		</nav>
+
+
+
+
+		<h2>From Wikipedia, the free encyclopedia</h2>
+	</section>
+
+
+
+
+
+
+
+
+
+
+	<!-- the styling below is used for the smooth transition between the partial content and the final content -->
+	<style>
+		.content-absolute{
+			position:absolute;
+			z-index:200;
+		}
+		#partialContent{
+			min-height:1000px;
+		}
+	</style>
+
+	<!--<div id='partialContent'></div>-->
+	<div id="fullContent"></div>
+
+
+
+
+<div id="disqus_thread" ng-mouseenter="reportComments(&#39;hover&#39;)">
+	<script>
+		var disqus_config = function () {
+			this.language = "en";
+		};
+		var disqus_shortname = "wikiwand";
+		var disqus_identifier = "/en/Ascii85";
+		var disqus_url = "http://www.wikiwand.com/en/Ascii85";
+		var disqus_title = "Ascii85";
+	</script>
+</div>
+
+<!-- discover MORE SECTION -->
+<!-- ngIf: (showDiscoverMore != 0) -->
+
+
+<section ng-show="$root.showArticleContents" class="page_copyright ng-hide" ng-init="mainImage = articleData.mainImage">
+	
+	This page is based on a <a ng-href="http://www.wikipedia.org" target="_blank" rel="nofollow" href="http://www.wikipedia.org/">Wikipedia</a> article (<a ng-href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true" target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true">read</a>/<a href="https://en.wikipedia.org/w/index.php?title=Ascii85&action=edit" target="_blank" rel="nofollow">edit</a>) and qw.<br>
+	Text is available under the <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license,nofollow">Creative Commons Attribution-ShareAlike 4.0 International License</a>; additional terms may apply.<br>
+	Images, videos and audio are available under their respective licenses.<br>
+	<!-- ngIf: mainImage.wikipediaPageFullUrl -->
+	
+	<div class="line"></div>
+</section>
+
+
+
+
+</article>
+
+
+
+<!-- article arrrows -->
+<div class="article_arrow prev">
+	<div class="arrow_content">
+
+	</div>
+	<span class="icon"></span>
+</div>
+<div class="article_arrow next">
+	<div class="arrow_content">
+
+	</div>
+	<span class="icon"></span>
+</div>
+
+
+
+
+
+
+
+		
+
+
+
+
+	
+
+
+			<!--************ wikiwand_footer ************-->
+			<footer class="wikiwand_footer ng-hide" ng-show="$root.showArticleContents || !articleData.pageIsArticle">
+
+
+				
+				<!-- ngIf: $root.activation.nextAction != '' --><div ng-if="$root.activation.nextAction != &#39;&#39;" class="ng-scope">
+
+					<!-- touch devices footer share -->
+					<!-- ngIf: $root.touchDevice -->
+
+					<!-- desktop upsale -->
+					<!-- ngIf: !$root.touchDevice --><div ng-if="!$root.touchDevice" class="desktop_upsale ng-scope">
+
+						<!-- desktop: rate -->
+						<!-- ngIf: $root.activation.extensionInstalled && $root.activation.nextAction == 'activation_rate' -->
+						<!-- desktop: share -->
+						<!-- ngIf: $root.activation.extensionInstalled && $root.activation.nextAction == 'activation_share' -->
+						<!-- desktop: install -->
+						<!-- ngIf: !$root.activation.extensionInstalled && $root.activation.nextAction == 'activation_install' -->
+
+					</div><!-- end ngIf: !$root.touchDevice -->
+				</div><!-- end ngIf: $root.activation.nextAction != '' -->
+				
+
+
+
+				<ul class="social_links" ng-show="(!activation.extensionInstalled || activation.nextAction != &#39;activation_share&#39;) &amp;&amp; !$root.showContentRecommendations">
+					<li class="facebook"><a class="hover" href="https://www.facebook.com/wikiwandapp" target="_blank"></a></li>
+					<li class="twitter"><a class="hover" href="https://twitter.com/wikiwand" target="_blank"></a></li>
+					<li class="gplus"><a class="hover" href="https://plus.google.com/+Wikiwand" target="_blank"></a></li>
+					<li class="linkedin"><a class="hover" href="http://www.linkedin.com/company/wikiwand" target="_blank"></a></li>
+				</ul>
+
+
+				<ul class="footer_links">
+					<li><a href="http://www.wikiwand.com/">Home</a></li>
+					<li><a href="http://www.wikiwand.com/about">About</a></li>
+					<li><a href="http://www.wikiwand.com/press">Press</a></li>
+					<li><a href="http://www.wikiwand.com/sitemap">Site Map</a></li>
+					<li><a href="http://www.wikiwand.com/terms">Terms Of Service</a></li>
+					<li><a href="http://www.wikiwand.com/privacy">Privacy Policy</a></li>
+					<li style="font-weight: 400"><a href="javascript:void(0);" ng-mouseenter="loadUserVoice()" data-uv-trigger="contact">Send Feedback</a></li>
+				</ul>
+			</footer>
+			<!--************ wikiwand_footer ENDS ************-->
+
+
+
+		</div>
+		<!--**************************** content ENDS *****************************-->
+		
+
+
+		<!--************ gallery & lang  ************-->
+		
+
+		<!--************ TOC  ************-->
+		
+			
+
+<!-- ngIf: !hideTOC -->
+
+		
+		
+
+<!--************ gallery ************-->
+<div id="gallery" ng-controller="GalleryController" ng-show="galleryActive" class="hide_before_angular ng-scope ng-hide" ng-class="{full: galleryFull}">
+	<div class="bg" ng-click="closeGallery()"></div>
+	<div id="gallery_bg">
+		<!--************ gallery image ************-->
+		<div id="gallery_img" class="unselectable" ng-class="{active: infoOpen}">
+
+			<div id="gallery_img_placeholder" ng-mouseenter="hoveredImg = true" ng-mouseleave="hoveredImg = false" class="loadThumb unselectable" ng-swipe-right="onPrevClick()" ng-swipe-left="onNextClick()">
+				<!-- ngIf: !current.bucket.loaded --><div id="img_loading" ng-if="!current.bucket.loaded" class="loaderAnim unselectable ng-scope"></div><!-- end ngIf: !current.bucket.loaded -->
+				<img ng-show="current.info.type == &#39;image&#39;" class="gallery_main bucket unselectable ng-hide" ng-class="{active:current.bucket.loaded}" alt="">
+
+				<div ng-show="current.info.type == &#39;video&#39;" class="gallery_main bucket video unselectable ng-hide" ng-class="{active:current.bucket.loaded}">
+					<div class="payload_container"></div>
+				</div>
+
+			</div>
+
+			<div class="gallery_arrow next unselectable" ng-show="current.index != items.length-1" ng-click="onNextClick()"><i></i></div>
+			<div class="gallery_arrow prev unselectable" ng-show="current.index != 0" ng-click="onPrevClick()"><i></i></div>
+
+			<div ng-mouseenter="hoveredImg = true" ng-mouseleave="hoveredImg = false" id="img_counter" class="ng-binding">
+				1 of 
+
+				<a ng-show="current.info.type == &#39;image&#39;" ng-class="{active: hoveredImg}" class="pin_btn tooltip_top ng-hide" title="Pin it" href="http://www.pinterest.com/pin/create/button/?url=http://wikiwand.com/en/Ascii85&media=&description=From%20Wikiwand:%20" target="_blank"></a>
+				<div class="report tooltip_top ng-hide" ng-show="current.info.type == &#39;image&#39;" ng-class="{active: hoveredImg}" title="Suggest as cover photo" ng-click="$root.showCoverImageSuggestPopup=true;$root.showSuggestImageText1=true;$root.showSuggestImageText2=false;"></div>
+			</div>
+			<div id="img_title" ng-bind-html="current.title" class="ng-binding"></div>
+
+
+			<!--************ gallery thumbs ************-->
+			<div id="gallery_thumbs_con" class="unselectable">
+				<!--<div id="gallery_thumbs_pull" class="unselectable"></div>-->
+				<div id="gallery_thumbs_scroll" class="unselectable">
+					<ul id="gallery_thumbs" class="unselectable">
+						<!-- ngRepeat: item in items -->
+					</ul>
+				</div>
+			</div>
+
+
+			<!--************ gallery btns ************-->
+			<ul id="gallery_btn">
+				<li id="gallery_info_pull" ng-click="infoOpen = !infoOpen" ng-class="{active: infoOpen}"></li>
+				<li id="gallery_close" ng-click="closeGallery()"></li>
+				<li id="full_screen" ng-click="toggleFullScreen()" ng-class="{active:fullScreenActive, unactive:!fullScreenActive}" class="unactive"></li>
+			</ul>
+		</div>
+		<!--************ gallery info  ************-->
+		<div id="gallery_info" ng-swipe-right="infoOpen = false" ng-show="infoOpen" class="ng-hide">
+			<div id="gallery_info_wrap">
+				<!-- ngIf: current.title -->
+                <ul>
+					<li ng-show="current.info.description" class="unselectable img_desc ng-hide"><i></i>
+						<div class="description_text ng-binding" ng-bind-html="current.info.descriptionSafe"></div>
+					</li>
+
+					<li class="img_date ng-binding ng-hide" ng-show="current.info.dateOriginal"><i></i>Date: Unknown</li>
+					<li class="img_date ng-binding" ng-show="!current.info.dateOriginal"><i></i>Date: Unknown</li>
+					<li ng-show="current.info.license.artist" class="with-child unselectable img_credit ng-hide" ng-click="subInfoOpen1 = !subInfoOpen1"><i></i>Credit: <span ng-bind-html="current.info.license.artist" class="ng-binding"></span>
+						<ul ng-show="subInfoOpen1" class="ng-hide">
+							<li class="ng-binding">Uploaded by:  on </li>
+							<li><span ng-bind-html="current.info.license.credit" class="ng-binding"></span></li>
+						</ul>
+					</li>
+					<li ng-show="current.info.license.url" class="img_license ng-hide"><i></i>License: <a href="" target="_blank" class="ng-binding">Unknown</a></li>
+					<li ng-show="!current.info.license.url" class="img_license ng-binding"><i></i>License: Unknown</li>
+					<li class="img_original"><i></i><a target="_blank" href="">View file on Wikipedia</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div ng-show="$root.showCoverImageSuggestPopup" class="report_popup_wrapp suggest ng-hide">
+		<div class="bg" ng-click="$root.showCoverImageSuggestPopup = false"></div>
+		<div class="report_popup">
+
+			<div ng-show="$root.showSuggestImageText1" class="ng-hide">
+				<h3>Suggest as cover photo</h3>
+				<p>Would you like to suggest this photo as the cover photo for this article?</p>
+				<a href="" target="_blank" ng-click="$root.suggestImage($event,&#39;recommended&#39;,current.original.url);">Yes, this would make a good choice</a>
+				<a href="" target="_blank" ng-click="$root.showCoverImageSuggestPopup=false">No, never mind</a>
+			</div>
+
+			<div ng-show="$root.showSuggestImageText2" class="ng-hide">
+				<h3>Thank you for helping!</h3>
+				<br>
+				<p>Your input will affect cover photo selection, along with input from other users.<br>
+			</p></div>
+			<div class="ex" ng-click="$root.showCoverImageSuggestPopup = false"></div>
+		</div>
+	</div>
+
+
+</div>
+<!--************ gallery ENDS ************-->
+
+
+
+
+<!-- fixed_btns at the bottom -->
+
+<div id="fixed_btns">
+
+
+
+	<!-- audio_player  -->
+	<div id="audio_player" class="unselectable"><i class="unselectable"></i><div class="unselectable"></div><span class="listen hide">Listen to this article</span></div>
+
+
+	<!-- Video player  -->
+	<div ng-controller="VideoController" ng-init="initializeVideoController()" class="ng-scope">
+		<!-- ngIf: render -->
+	</div>
+
+	<!-- ngIf: $root.showVidReport -->
+
+
+	<!-- wikipedia switch -->
+	<div ng-controller="WalkthroughController" ng-init="init(&#39;switch_to_wp&#39;, {pagesViewed:4})" class="toggle_wiki ng-scope ng-hide" id="switch_to_wikipedia" ng-show="$root.activation.showSwitchToWikipedia" ng-click="showWalkthrough = false" ng-class="{popped: showWalkthrough}">
+		<i></i>
+		<div class="switch_logo wikipedia">
+			<a class="wikiwand_switch" ng-href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true" ng-click="pediaOn = true" href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true">
+				<img src="wikipedia_logo.svg" alt="wikipedia logo">
+			</a>
+		</div>
+		<a ng-click="pediaOn = true" ng-href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true" id="switch_btn" ng-class="{pedia: pediaOn}" href="https://en.wikipedia.org/wiki/Ascii85?oldformat=true"></a>
+		<div class="switch_logo wikiwand">
+			<img src="wikiwand_logo.svg" alt="wikipedia logo">
+		</div>
+
+		<!-- ngIf: showWalkthrough -->
+	</div>
+
+
+</div>
+
+
+
+<script>
+	if(!precache_from_extension) {
+		if (typeof (analytics) != 'undefined') {
+			analytics.gaVirtualPageView('virtualpageview/impression-article-page');
+		}
+	}else{
+		if (typeof (analytics) != 'undefined') {
+			analytics.gaVirtualPageView('virtualpageview/iframe-precache-article');
+		}
+	}
+</script>
+
+
+
+
+
+
+<!--*************************** search  *************************-->
+
+
+
+<!--*************************** search  *************************-->
+<div id="wikiwand_search" ng-init="initSearch()" ng-controller="ArticleSearchControllerRev2" ng-show="$root.showSearch" class="ng-scope ng-hide">
+	<div class="bg darkBlack" ng-click="$root.openSearch(&#39;close&#39;)"></div>
+
+
+	<div id="search_list" ng-class="{on: search.query.length}">
+
+		<input id="queryinput" autocomplete="off" class="toolbar-search ng-pristine ng-untouched ng-valid selectedResult" type="text" ng-class="{selectedResult: noSelection, loading:waiting}" ng-model="search.query" ng-keyup="testKeyboard($event)" placeholder="Search">
+
+		<div id="articleSearch" ng-show="search.query.length" class="ng-hide">
+
+			<ul class="results-container ng-hide" ng-show="search.results.length">
+				<!-- ngRepeat: result in search.results -->
+			</ul>
+
+			<!-- ngIf: noResults && search.query && !waiting -->
+			<a ng-show="search.query &amp;&amp; !waiting" class="searchResult containing ng-hide" href="http://www.wikiwand.com/en/?fullSearch=true" ng-class="{selectedResult:fullSearch}">
+
+				<span class="value">Search for articles containing: <i class="ng-binding"></i></span>
+			</a>
+		</div>
+		<!-- ngIf: !$root.touchDevices --><img src="search_ctrl.svg" ng-if="!$root.touchDevices" id="search-hint" style="display: block; margin: 20px auto" class="ng-scope"><!-- end ngIf: !$root.touchDevices -->
+
+	</div>
+
+
+
+
+	<div id="search_description">
+
+	</div>
+
+</div>
+<!--*************************** search ENDS *************************-->
+
+<!--*************************** search ENDS *************************-->
+
+<!-- ngIf: $root.loadVariousPopups -->
+<!--************ follow dialog ************-->
+
+
+	
+
+
+	
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+<script>var totalServingTime=0;</script></body></html>

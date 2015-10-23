@@ -1,0 +1,50 @@
+##########
+luasend init.lua
+
+function tone( pin, freq )
+    pwm.stop(pin)
+    pwm.setup(pin, freq, 300)
+    pwm.start(pin)
+end
+
+function playRandomMelody(tmrid, pin, speed)
+    d = math.random(1,10)
+    tmr.stop(tmrid)
+    tmr.alarm(tmrid, 100 * d, 1, function() 
+        tone(pin, math.random(1,200))
+    end)
+end
+
+function soundLightSequence1(tmrid, spin, lpin, speed)
+    tmr.stop(tmrid)
+    tmr.alarm(tmrid, 1000 / speed, 1, function() 
+        m = math.random(1,200)
+        tone(spin, m)
+        ws2812.writergb(lpin, string.char(m, m, m))
+    end)
+end
+
+soundLightSequence1(4, 2, 4, 1)
+
+
+file.fsinfo()
+print(string.char(0))
+print(string.char(255))
+pwm.close(2)
+pwm.setclock(2, 100)
+tmr.stop(2)
+
+ws2812.writergb(4, string.char(0, 0, 255):rep(10))
+
+bit.bnot()
+bit.band()
+bit.bor()
+bit.bxor()
+bit.lshift()
+bit.rshift()
+bit.arshift()
+bit.bit()
+bit.set()
+bit.clear()
+bit.isset()
+bit.isclear()

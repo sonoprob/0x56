@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0050)http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Luiz Henrique de Figueiredo: Libraries and tools for Lua</title>
+<link rel="stylesheet" type="text/css" href="./libs_tools_files/lhf.css">
+
+<style type="text/css">
+:target {
+	margin-left: -24px ;
+	padding-left: 8px ;
+	border-left: solid #0000A0 16px ;
+}
+
+dd {
+	margin-bottom: 1em ;
+}
+
+strong {
+	padding-right: 0.1em ;
+	font-style: italic ;
+	font-weight: normal ;
+}
+
+u {
+	font-style: italic ;
+	text-decoration: none ;
+	color: red ;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+<tbody><tr>
+<td valign="top" style="text-align: justify">
+<hr style="margin-top: 0pt">
+<h1>Libraries and tools for Lua</h1>
+<p>
+Here are my libraries and tools for
+<a href="http://www.lua.org/">Lua</a>.
+
+They are simple to install and use,
+but read
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html">detailed instructions</a> anyway.
+
+Check their
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/release.txt">release data</a>
+(date, size, and checksum)
+to make sure you have the
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html#latest">latest version</a>
+for your version of Lua.
+Some packages are also available as
+<a href="https://luarocks.org/">Lua rocks</a>.
+All packages available here are in the
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html#license">public domain</a>.
+
+Please
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html#contact">drop me a line</a>
+if you use one of my packages.
+All
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html#contact">feedback</a>
+is welcome.
+Enjoy.
+
+</p><p>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#ae">ae</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#ctrace">ctrace</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#demo">demo</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lalarm">lalarm</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lascii85">lascii85</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbase64">lbase64</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbc">lbc</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbci">lbci</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbn">lbn</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lcl">lcl</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lcomplex">lcomplex</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#ldumplib">ldumplib</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lgdbm">lgdbm</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lgpc">lgpc</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lint64">lint64</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#linterval">linterval</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmapm">lmapm</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmathx">lmathx</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmd5">lmd5</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#loadlib">loadlib</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lpack">lpack</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lpdf">lpdf</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lper">lper</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lposix">lposix</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lqd">lqd</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lrandom">lrandom</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lstrip">lstrip</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#ltokens">ltokens</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lua2c">lua2c</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#luac.lua">luac.lua</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#luuid">luuid</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lv3">lv3</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lxml">lxml</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#mav">mav</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#srlua">srlua</a>&nbsp;·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#tokenf">tokenf</a>
+
+</p><p>
+<small>
+I am slowly updating these packages to Lua 5.3.
+The remaining 5.2 packages should work fine with Lua 5.3,
+perhaps with minor changes in the Makefile.
+If you need an updated version a package,
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html#contact">send me a note</a>.
+</small>
+
+</p><hr style="margin-bottom: 0pt">
+
+</td><td valign="top" width="60">
+</td><td valign="middle" style="border: solid #a0a0a0 2px" width="120" align="center" bgcolor="white">
+<a href="http://www.tecgraf.puc-rio.br/"><img src="./libs_tools_files/tecgraf.gif" border="0" alt=""></a>
+<p>
+<a href="http://www.lua.org/"><img src="./libs_tools_files/lua.gif" border="0" alt=""></a>
+</p><p>
+<a href="http://creativecommons.org/publicdomain/mark/1.0/"><img src="./libs_tools_files/pd.png" border="0" alt="" title="public domain"></a>
+</p></td></tr>
+</tbody></table>
+
+<dl>
+
+<dt>
+<a name="Lua.app"><strong>Lua.app</strong></a> –
+A precompiled Lua application for Mac OS X containing most of my modules and easy to adapt to other module collections.
+Read the
+<a href="http://lua-users.org/lists/lua-l/2013-07/msg00499.html">announcement</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/Lua.zip">5.2</a>
+
+</dd><dt>
+<a name="ae"><strong>ae</strong></a> –
+A general-purpose arithmetic expression package for C programs based on Lua.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/ae.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/ae.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/ae.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/ae.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/ae.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="ctrace"><strong>ctrace</strong></a> –
+A tool for tracing Lua API calls.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/ctrace.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/ctrace.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/ctrace.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/ctrace.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="demo"><strong>demo</strong></a> –
+The source of the
+<a href="http://www.lua.org/demo.html">Lua live demo</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/demo.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lalarm"><strong>lalarm</strong></a> –
+An alarm library for Lua based on
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/alarm.html">POSIX alarm</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lalarm.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lalarm.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lalarm.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/alarm.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lascii85"><strong>lascii85</strong></a> –
+An
+<a href="http://en.wikipedia.org/wiki/Ascii85">ascii85</a>
+library for Lua.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lascii85.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lascii85.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lascii85.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lbase64"><strong>lbase64</strong></a> –
+A
+<a href="http://en.wikipedia.org/wiki/Base64">base64</a>
+library for Lua.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbase64.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lbase64.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lbase64.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lbc"><strong>lbc</strong></a> –
+A simple self-contained
+<a href="http://en.wikipedia.org/wiki/Bignum">arbitrary precision</a>
+library for Lua based on
+<a href="http://www.gnu.org/software/bc/">GNU bc</a>.
+See also <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbn">lbn</a>,
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmapm">lmapm</a>, and <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lqd">lqd</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lbc.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbc.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lbc.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lbc.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/bc.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lbci"><strong>lbci</strong></a> –
+A bytecode inspector library.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbci.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lbci.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lbn"><strong>lbn</strong></a> –
+A fast integer-only
+<a href="http://en.wikipedia.org/wiki/Bignum">arbitrary precision</a>
+library for Lua based on
+<a href="http://www.openssl.org/docs/crypto/bn.html">OpenSSL bn</a>.
+See also <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbc">lbc</a>,
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmapm">lmapm</a>, and <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lqd">lqd</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbn.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lbn.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lcl"><strong>lcl</strong></a> –
+A command-line evaluator library that supports shell-like command lines
+and
+<a href="http://en.wikipedia.org/wiki/S-expression">s-expressions</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lcl.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lcomplex"><strong>lcomplex</strong></a> –
+A math library for complex numbers based on
+<a href="http://www.dinkumware.com/manuals/default.aspx?manual=compleat&page=complex2.html">C99</a>.
+See also <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lmathx">lmathx</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lcomplex.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lcomplex.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lcomplex.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="ldumplib"><strong>ldumplib</strong></a> –
+A bytecode dumper for Lua 4.0.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/ldumplib.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lgdbm"><strong>lgdbm</strong></a> –
+A database library for Lua based on
+<a href="http://www.gnu.org/software/gdbm/">GNU dbm</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lgdbm.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lgdbm.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lgdbm.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/gdbm.tar.gz">4.0</a>
+<br>
+<a href="http://www.pjb.com.au/comp/lua/lgdbm.html">manual</a> by Peter Billam
+
+</dd><dt>
+<a name="lgpc"><strong>lgpc</strong></a> –
+A library for Boolean operations on polygons based on
+<a href="http://www.cs.man.ac.uk/~toby/alan/software/">gpc</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lgpc.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lgpc.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lgpc.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lgpc.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lint64"><strong>lint64</strong></a> –
+A library for 64-bit signed integer arithmetic.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lint64.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lint64.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="linterval"><strong>linterval</strong></a> –
+An
+<a href="http://en.wikipedia.org/wiki/Interval_arithmetic">interval arithmetic</a>
+library based on
+<a href="http://www.ti3.tu-harburg.de/Software/PROFILEnglisch.html">PROFIL/BIAS</a>.
+Includes an implicit curve plotter.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/linterval.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/linterval.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lmapm"><strong>lmapm</strong></a> –
+A complete <a href="http://en.wikipedia.org/wiki/Bignum">arbitrary precision</a>
+library for Lua based on
+<a href="http://www.tc.umn.edu/~ringx004/mapm-main.html">MAPM</a>.
+See also <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbc">lbc</a>,
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbn">lbn</a>, and <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lqd">lqd</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lmapm.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmapm.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lmapm.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lmapm.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/mapm.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lmathx"><strong>lmathx</strong></a> –
+An extension of the standard math library based on
+<a href="http://www.dinkumware.com/manuals/default.aspx?manual=compleat&page=math.html">C99</a>.
+See also <a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lcomplex">lcomplex</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lmathx.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmathx.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lmathx.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lmd5"><strong>lmd5</strong></a> –
+A
+<a href="http://en.wikipedia.org/wiki/Message_digest">message digest</a>
+library for Lua based on
+<a href="http://www.openssl.org/">OpenSSL</a>.
+It supports
+<a href="http://en.wikipedia.org/wiki/MD2_(cryptography)">MD2</a>,
+<a href="http://en.wikipedia.org/wiki/MD4">MD4</a>,
+<a href="http://en.wikipedia.org/wiki/MD5">MD5</a>,
+<a href="http://en.wikipedia.org/wiki/SHA-1">SHA1</a>,
+<a href="http://en.wikipedia.org/wiki/SHA-2">SHA2</a>,
+<a href="http://en.wikipedia.org/wiki/RIPEMD-160">RIPEMD160</a>,
+<a href="http://en.wikipedia.org/wiki/MDC2">MDC2</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmd5.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lmd5.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lmd5.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="loadlib"><strong>loadlib</strong></a> –
+A dynamic loader for Lua 4.0.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/loadlib.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lpack"><strong>lpack</strong></a> –
+A library for packing and unpacking binary data.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lpack.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lpack.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/pack.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lpdf"><strong>lpdf</strong></a> –
+A library for generating
+<a href="http://en.wikipedia.org/wiki/Portable_Document_Format">PDF</a>
+documents based on
+<a href="http://www.pdflib.com/download/free-software/pdflib-lite-7/">PDFlib Lite</a>.
+See also
+<a href="http://luahpdf.colloquiki.com/">LuaHPDF</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lpdf.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lpdf.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lpdf.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/pdflib.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lper"><strong>lper</strong></a> –
+An experimental tool that allows a Lua state to persist across invocations of the interpreter.
+It uses
+<a href="http://freshmeat.net/projects/lpsm/">LPSM</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lper.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lper.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lposix"><strong>lposix</strong></a> –
+A
+<a href="http://www.opengroup.org/onlinepubs/007904875/">POSIX</a>
+library for Lua.
+<u>No longer maintained.</u>
+See <a href="https://github.com/luaposix/luaposix">luaposix</a>.
+</dt><dd>
+<a href="http://lua-users.org/lists/lua-l/2007-05/msg00087.html">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lposix.tar.gz">5.0</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/poslib.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="lqd"><strong>lqd</strong></a> –
+A high-precision mathematical library for Lua based on
+<a href="http://crd.lbl.gov/~dhbailey/mpdist/">qd</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lqd.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lqd.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lqd.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="lrandom"><strong>lrandom</strong></a> –
+A library for generating
+<a href="http://en.wikipedia.org/wiki/Pseudo-random_number_generator">random numbers</a>
+based on the
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html">Mersenne Twister</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lrandom.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lrandom.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lrandom.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lstrip"><strong>lstrip</strong></a> –
+A tool for compressing Lua programs by removing comments and whitespace.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/lstrip.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lstrip.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lstrip.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="ltokens"><strong>ltokens</strong></a> –
+A library for lexical analysis of Lua code based directly on the Lua lexer.
+</dt><dd>
+<a href="http://lua-users.org/lists/lua-l/2006-10/msg00442.html">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/ltokens.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lua2c"><strong>lua2c</strong></a> –
+A tool that converts Lua code into Lua API code in C.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/lua2c.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/4.0/lua2c.tar.gz">4.0</a>
+
+</dd><dt>
+<a name="luac.lua"><strong>luac.lua</strong></a> –
+A version of luac in pure Lua that supports require. Read the
+<a href="http://lua-users.org/lists/lua-l/2008-08/msg00092.html">announcement</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/luac.lua">5.1</a>
+
+</dd><dt>
+<a name="luuid"><strong>luuid</strong></a> –
+A library for generating
+<a href="http://en.wikipedia.org/wiki/Universally_Unique_Identifier">universally unique identifiers</a> based on libuuid, which is part of
+<a href="http://e2fsprogs.sourceforge.net/">e2fsprogs</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/luuid.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/luuid.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/luuid.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lv3"><strong>lv3</strong></a> –
+A library for adding 3d vectors to Lua. Meant as a learning aid.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/lv3.tar.gz">5.0</a>
+
+</dd><dt>
+<a name="lxml"><strong>lxml</strong></a> –
+A library for parsing XML data into Lua tables based on
+<a href="http://expat.sourceforge.net/">expat</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lxml.tar.gz">5.2</a>
+
+</dd><dt>
+<a name="mav"><strong>mav</strong></a> –
+An experimental tool for memory allocation visualization.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/mav.tar.gz">5.1</a>
+
+</dd><dt>
+<a name="srlua"><strong>srlua</strong></a> –
+A tool for building self-running Lua programs.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.3/srlua.tar.gz">5.3</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/srlua.tar.gz">5.2</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/srlua.tar.gz">5.1</a> ·
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/srlua.tar.gz">5.0</a>
+<!--
+<BR>
+precompiled extended Windows versions by
+<A HREF="http://www.soongsoft.com/">Daniel Quintela</A>:
+<A HREF="http://www.soongsoft.com/lhf/lua/5.1/srlua.tgz">5.1</A> &middot;
+<A HREF="http://www.soongsoft.com/lhf/lua/5.0/srlua.tgz">5.0</A>.
+-->
+
+</dd><dt>
+<a name="tokenf"><strong>tokenf</strong></a> –
+A token filter facility for Lua.
+See the
+talks at the Lua Workshops in
+<a href="http://www.tecgraf.puc-rio.br/~lhf/ftp/doc/oral/luaws05.pdf">2005</a>
+and
+<a href="http://www.lua.org/wshop06/Silverstone2.pdf">2006</a>.
+</dt><dd>
+<a href="http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/5.1/tokenf.tar.gz">5.1</a>
+
+</dd></dl>
+
+<hr>
+<p>
+<small>
+Last update:
+Wed Jul  1 23:53:36 BRT 2015
+by <a href="http://www.tecgraf.puc-rio.br/~lhf/">lhf</a>.
+</small>
+
+
+
+</p><iframe frameborder="none" id="wikiwand_precache_1" src="./libs_tools_files/Ascii85.html" style="width: 0px; height: 0px; top: 0px; left: 100%; z-index: 1000; position: fixed;"></iframe></body></html>

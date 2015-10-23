@@ -1,0 +1,115 @@
+function initDevice(mac)
+    print(mac)
+    switch {
+        ['18:fe:34:9a:6c:44'] = green(),
+        ["18:fe:34:9a:6d:10"] = blue(),
+        ["18:fe:34:f9:0e:d9"] = red(),
+        default = function (x) print(x,0) end,
+    }:case(mac)
+    print(id)
+end
+
+
+function initDevice(mac)
+    print(mac)
+    if mac == "18:fe:34:9a:6c:44" then
+	green()
+	
+        ["18:fe:34:9a:6d:10"] = blue(),
+        ["18:fe:34:f9:0e:d9"] = red(),
+        default = function (x) print(x,0) end,
+    }:case(mac)
+    print(id)
+end
+
+
+
+-- node.compile('irc.lua')
+-- file.remove('std.lua')
+-- dofile('data.lua')
+
+
+18:fe:34:f9:0e:d9
+29176
+192.168.1.24
+branch: dev096
+modules: node,file,gpio,wifi,net,pwm,i2c,tmr,adc,uart,ow
+34616
+
+dofile("init.lua");
+> =node.heap()
+
+
+> dofile("irc.lua");
+> =node.heap()
+15520
+
+
+
+
+        -- send_message(chnl, node.heap())
+        -- send_message(chnl, msg)        
+        -- send_message(chnl, math.random(0,1000) .. "" .. wifi.sta.getmac() .. " " .. wifi.sta.getip())
+        -- send_message(chnl, wifi.sta.getmac() .. " " .. wifi.sta.getip() .. " " .. node.heap())
+        Upgrader.update('test2.lua', 'http://78.47.95.86/test2.lua')
+
+Upgrader.update('test2.lua', 'http://78.47.95.86/test2.lua')
+
+-- require('irc')
+--dofile('irc.lua')
+--dofile('data.lua')
+
+
+-- do this in init instead:
+-- server = {"78.47.95.83", 4567}
+-- server = {"192.168.10.101", 6667}
+-- if kabk == true 
+-- server = {"172.17.19.214", 6667}
+
+--- bootstrap
+
+
+
+
+
+
+print("running init.lua ...")
+-- uart.setup( 0, 115200, 8, 0, 1, 1)
+uart.setup( 0, 9600, 8, 0, 1, 1)
+
+dofile("load-wifi.lua")
+dofile("fn-irc.lua")
+server = {"78.47.95.83", 4567}
+dofile("run-ircclient.lua")
+
+-- dofile("fn-std.lua")
+-- require('Upgrader')
+-- Upgrader.update('test2.lua', 'http://78.47.95.86/test2.lua')
+
+-- may override functions here
+function handle_command(chnl, cmd, args)
+    if cmd == "google" then
+        send_message(chnl, "http://google.com/search?q=" .. url_encode(table.concat(args, " ")))
+    elseif cmd == "reboot" then
+        send_message(chnl, "rebooting, I'll be back")
+        node.restart()
+    elseif cmd == "mac" then
+        send_message(chnl, wifi.sta.getmac())
+    elseif cmd == "blink" then
+        dofile("blink-led.lua")
+    elseif cmd == "update" then        
+    --    Upgrader.update('test2.lua', 'http://78.47.95.86/test2.lua')
+    else
+        send_message(chnl, "heheh")
+    end
+end
+----
+
+print("init.lua read")
+
+------- inititalise additional modules
+-- dofile("fn-gpio.lua")
+
+
+
+

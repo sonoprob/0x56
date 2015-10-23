@@ -1,0 +1,19 @@
+From the source folder: 
+$ ./kiwi start
+
+foreground to see any output by using the `-f` flag. Eg: 
+$ ./kiwi -f
+
+http://localhost:7778/
+
+
+// header('Location: http://example.net:443')
+// kw.html
+
+<?php
+header("Location: http://0x56.net:7778");
+Write failed: Broken pipe
+vsi:~ a$ 
+?>
+
+

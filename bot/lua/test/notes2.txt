@@ -1,0 +1,67 @@
+screen /dev/cu.SLAB_USBtoUART
+minicom -b 9600 -D /dev/cu.SLAB_USBtoUART
+
+./miniircd --motd=motd.txt
+
+luatool
+
+lua martinchobot.lua
+
+vsi:~ a$ sudo luarocks install irc
+
+a$ lsof | grep /dev/tty.SLAB_USBtoUART
+
+-> screen    87098    a    ... /dev/tty.SLAB_USBtoUART
+
+
+lsof | grep /dev/tty.SLAB_USBtoUART
+kill 87098
+
+irssi -c 78.47.95.83 -p 4567 -n jk
+
+irssi -c irc.a-um.nl -p 4567 -n jk
+
+
+
+vca@pulsecode:~/mez_app$ python manage.py gnottify
+
+(mezzanine_env)vca@pulsecode:~/mez_app$ ./0_run_mez_app.sh
+
+print("running init.lua ...")
+-- uart.setup( 0, 115200, 8, 0, 1, 1)
+uart.setup( 0, 9600, 8, 0, 1, 1)
+
+dofile("fn-std.lua")
+
+dofile("load-wifi.lua") -- connect to know wifi, home or kabk
+
+-- connected, ip: 172.17.23.95
+
+-- dofile("load-wifi-local.lua") -- connect to local router
+-- dofile("testing.lua")
+
+dofile("fn-irc.lua")
+DEBUG = false
+TEST = true
+
+server = {"78.47.95.83", 4567}
+-- server = {"192.168.10.101", 6667}
+-- if kabk == true 
+
+-- server = {"172.17.19.214", 6667}
+dofile("run-ircclient.lua")
+
+--  disconnection(irc)
+-- irc:send("PRIVMSG " .. chnl .. " :" .. "HI!" .. "\r\n")
+-- irc:send("PRIVMSG " .. chnl .. " :" .. wifi.sta.getmac() .. "\r\n")
+
+
+-- may override functions here
+-- require('Upgrader')
+-- Upgrader.update('test2.lua', 'http://78.47.95.86/test2.lua')
+
+----
+print("init.lua read")
+
+------- load additionally modules
+-- dofile("fn-gpio.lua")

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer" />
+  <meta name="CocoaVersion" content="1344.72" />
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'OCR A Std'; min-height: 14.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px}
+    p.p3 {margin: 0.0px 0.0px 21.0px 0.0px; text-align: justify; line-height: 22.0px}
+    font.f1 {font: 12.0px 'OCR A Std'}
+    font.f2 {font: 14.0px 'Goudy Old Style'; font-kerning: none; color: #323333; -webkit-text-stroke: 0px #323333}
+    font.f3 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><br /></p>
+<p class="p2"><font face="OCR A Std" size="3" class="f1"><a href="https://github.com/sbchou/Parakeet">https://github.com/sbchou/Parakeet</a></font></p>
+<p class="p1"><br /></p>
+<p class="p2"><font face="OCR A Std" size="3" class="f1"><a href="http://blog.sophiechou.com/2013/how-to-model-markov-chains/">http://blog.sophiechou.com/2013/how-to-model-markov-chains/</a></font></p>
+<p class="p2"><font face="OCR A Std" size="3" class="f1"><a href="http://blog.sophiechou.com/category/nerdery/data-science/nlp/">http://blog.sophiechou.com/category/nerdery/data-science/nlp/</a></font></p>
+<p class="p1"><br /></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">WHAT IS A MARKOV CHAIN?<br />
+A Markov chain, named after <a href="http://en.wikipedia.org/wiki/Andrey_Markov"><font class="f3"><u>this great moustached man</u></font></a> is a type of mathematical system composed of a finite number of discrete <i>states</i> and transitions between these states, denoted by their <i>transition</i> probabilities. The most important thing about a Markov Chain is that it satisfies the <b>Markov Property: that each state depends only on the state directly proceding it* and no others.</b> This <i>independence assumption</i> makes a Markov Chain easy to manipulate mathematically. (*This is a Markov Chain of degree 1, but you could also have a Markov Chain of degree <i>n</i> where we look at the past <i>n</i> states only.) A Markov Chain is a specific kind of <a href="http://en.wikipedia.org/wiki/Markov_process"><font class="f3"><u>Markov Process</u></font></a> with discrete states.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">A VISUAL<br />
+That’s a lot of words for a concept that is in fact very simple. Here’s a picturesque example instead:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Imagine that you are a small frog in a pond of lily pads. The pond is big but there are a countable (discrete) number of lily pads (states). You start on one lily pad (start state) and jump to the next with a certain probability (transition probability). When you’re on one lily pad, you only think of the next one to jump to, and you don’t really care about what lily pads you’ve jumped on in the past (memoryless).</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">That’s all!</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">WHY DO WE USE IT?<br />
+Markov Chains have many, many applications. (Check out <a href="http://en.wikipedia.org/wiki/Examples_of_Markov_chains"><font class="f3"><u>this Wikipedia page</u></font></a> for a long list.) They’re useful whenever we have a chain of events, or a discrete set of possible states. A good example is a time series: at time 1, perhaps student S answers question A; at time 2, student S answers question B, and so on.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">A RANDOM TEXT GENERATOR<br />
+Now, for the fun part!</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">For Knewton’s company hackday, I’ve built a text analysis “funkit” that can perform a variety<br />
+of fun things, given an input text file (corpus). You can clone the source code <a href="https://github.com/sbchou/Parakeet"><font class="f3"><u>here</u></font></a>. Don’t worry if the word “cloning” sounds very scifi, you can check out the README that I’ve written (residing in that link) for detailed instructions on how to use the code. As long as you have python installed on your computer (Macs come pre-installed) you should be fine and dandy.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">What we’re most interested in is the parrot() function. This is the “Markov Chain Babbler” or Random Text Generator that mimics an input text. (Markov Chain Babblers are used to generate <a href="http://en.wikipedia.org/wiki/Lorem_ipsum"><font class="f3"><u>Lorem Ipsums (text fillers)</u></font></a> such as this wonderful <a href="http://slipsum.com/"><font class="f3"><u>Samuel L. Ipsum example</u></font></a>.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Included are a few of my favorite sample “corpuses” (scary word for sample text) taken from Project Gutenburg, it includes:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">“memshl.txt” which is the complete Memoirs of Sherlock Holmes<br />
+“kerouac.txt”, an excerpt from On the Road<br />
+“aurelius.txt”, Marcus Aurelius’ Meditations<br />
+and finally, “nietzsche.txt”, Nietzsche’s Beyond Good and Evil.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Here’s a prime snippet of text generated using the Nietzsche corpus, of length 100, one of my favorites:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">“CONTEMPT. The moral physiologists. Do not find it broadens and a RIGHT OF RANK, says with other work is much further than a fog, so thinks every sense of its surface or good taste! For my own arts of morals in the influence of life at the weakening and distribution of disguise is himself has been enjoyed by way THERETO is thereby. The very narrow, let others, especially among things generally acknowledged to Me?.. Most people is a philosophy depended nevertheless a living crystallizations as well as perhaps in”</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Despite being “nonsense”, it captures the essence of the German philosopher quite well. If you squint a little, it doesn’t take much imagination to see this arise from the mouth of Nietzsche himself.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Here’s some Kerouac text, too:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">“Flat on a lot of becoming a wonderful night. I knew I wrote a young fellow in the next door, he comes in Frisco. That’s rights. A western plateau, deep one and almost agreed to Denver whatever, look at exactly what he followed me at the sleeping. He woke up its bad effects, cooked, a cousin of its proud tradition. Well, strangest moment; into the night, grand, get that he was sad ride with a brunette. You reckon if I bought my big smile.”</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">HOW IT WORKS<br />
+Parakeet generates text using a simple level-1 Markov Chain, just like we described above. Let’s break it down:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">1. We read the input file and “tokenize” it– in other words we break it up into words and punctuation.<br />
+2. Now, for each word in text, we store every possible next word that follows it. We do this using a Python dictionary, aka a hash table.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">For example, if we have the following sentence,<br />
+“the only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time”</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">We have the following dependencies:</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">{‘,’: ['the', 'mad', 'mad', 'desirous'],<br />
+‘are’: ['the', 'mad'],<br />
+‘at’: ['the'],<br />
+‘be’: ['saved'],<br />
+‘desirous’: ['of'],<br />
+‘everything’: ['at'],<br />
+‘for’: ['me'],<br />
+‘live’: [','],<br />
+‘mad’: ['ones', 'to', 'to', 'to'],<br />
+‘me’: ['are'],<br />
+‘of’: ['everything'],<br />
+‘ones’: [',', 'who'],<br />
+‘only’: ['people'],<br />
+‘people’: ['for'],<br />
+‘same’: ['time'],<br />
+‘saved’: [','],<br />
+‘talk’: [','],<br />
+‘the’: ['only', 'mad', 'ones', 'same'],<br />
+‘to’: ['live', 'talk', 'be'],<br />
+‘who’: ['are']}</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">Note that in this naive (non-space smart) implementation of the text generator, when we have duplicate occurances of next words, for example<br />
+‘mad’: ['ones', 'to', 'to', 'to'], we store it once each time.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">3. Now the fun part. Say we want to generate a paragraph of 100 words. First, we randomly choose a <i>startword</i>, that is capitalized first word. Now, we randomly choose a next word from its list of next words (since frequent next words will have many duplicates, it will be chosen more often), and from that word, continue the process till we achieve a paragraph of length 100.</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">WHY IS THIS A MARKOV PROCESS?<br />
+Well, when we build up our paragraphs, we choose our next word based only on the choices generated by our current word. Doing so, we ignore the history of previous words we have chosen (which is why many of the sentences are nonsensical), yet since each choice of the next word is logical based on the current one, we end up with something that emulates the writing style (chaining).</font></p>
+<p align="justify" class="p3"><font face="Goudy Old Style" size="4" color="#323333" class="f2">SOURCE CODE:<br />
+Check out my code on github, <a href="https://github.com/sbchou/Parakeet"><font class="f3"><u>located here</u></font></a>. Simply fire up your terminal, and type “git clone the-url”, and it will copy the repo into a directory on your local machine. Further instructions are in the README.</font></p>
+</body>
+</html>

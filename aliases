@@ -1,3 +1,35 @@
 alias 0x56="cd $DEV/versioned/0x56 && git status && . aliases"
 
+#export ESP="$HOME/201508/ESP8266"
+### github repository
+#https://github.com/sonoprob/0x56.git
+
+### NODEMCU
+## /Users/a/201508/ESP8266/scripts
+alias esp="cd $ESP"
+alias esplorer="$ESP/scripts/esplorer-start.command"
+alias luasend="$ESP/scripts/luasend.sh"
+alias reflash="$ESP/scripts/flash-nodemcu.command"
+
+#esplorer-start.command
+#flash-nodemcu-float.command
+##luasend.sh
+#esptool.py
+#flash-nodemcu-setport.command luasend2.sh
+#flash-nodemcu.command
+#luasendinit.sh
+#flash-atthinker.sh
+#init.sh
+#send-nodemcu-ide-init.command
+#./flash-nodemcu.command
+
+function lsend() {
+  #$ESP/scripts/luasend2.sh $1 $1
+  /Users/a/201508/ESP8266/ESP8266-NodeMCU/luatool/luatool.py --port /dev/tty.SLAB_USBtoUART --src $1 $
+}
+
+alias espscreen="screen /dev/tty.SLAB_USBtoUART 9600"
+
+
+
 echo "0x56 aliases read"

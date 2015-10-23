@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer" />
+  <meta name="CocoaVersion" content="1344.72" />
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Consolas; color: #333333; -webkit-text-stroke: #333333; min-height: 18.0px}
+    font.f1 {font: 15.0px Consolas; font-kerning: none; color: #333333; -webkit-text-stroke: 0px #333333}
+    font.f2 {font-kerning: none}
+    font.f3 {font-kerning: none; color: #4078c0; -webkit-text-stroke: 0px #4078c0}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Finite state machines can be used to force (at least parts of) your code into<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">deterministic behaviour.<span class="Apple-converted-space"> </span></font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">A design pattern for doing finite state machines (FSMs) in Lua</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">==============================================================</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Based on a very appreciated contribution of Luiz Henrique de Figueiredo</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Original code from <a href="http://lua-users.org/wiki/FiniteStateMachine"><font color="#4078c0" class="f3">http://lua-users.org/wiki/FiniteStateMachine</font></a></font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">The FSM is described with: old_state, event, new_state and action.</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">One easy way to do this in Lua would be to create a table in exactly<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">the form above:</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">yourStateTransitionTable = {<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{state1, event1, state2, action1},</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{state1, event2, state3, action2},</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>...</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">}</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">The function FSM takes the simple syntax above and creates tables<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">for (state, event) pairs with fields (action, new):</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">function FSM(yourStateTransitionTable)</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">  </span>local stt = {}</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">  </span>for _,v in ipairs(t) do</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">    </span>local old, event, new, action = v[1], v[2], v[3], v[4]</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">    </span>if stt[old] == nil then a[old] = {} end</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">    </span>stt[old][event] = {new = new, action = action}</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">  </span>end</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-converted-space">  </span>return stt</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">end</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Note that this scheme works for states and events of any type: number,<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">string, functions, tables, anything. Such is the power of associate arrays.</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">However, the double array stt[old][event] caused a problem for event = nil</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Instead a single array is used, constructed as stt[state .. SEPARATOR .. event]</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Where SEPARATOR is a constant and defined as '.'</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Three special state transitions are added to the original code:</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">- any state but a specific event</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">- any event but a specific state</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">- unknown state-event combination to be used for exception handling</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">The any state and event are defined by the ANY constant, defined as '*'<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">The unknown state-event is defined as the combination of ANY.ANY (*.*)</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">A default exception handler for unknown state-event combinations is<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">provided and therefore a specification a your own exception handling is</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">optional.</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">After creating a new FSM, the initial state is set to the first defined<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">state in your state transition table. With add(t) and delete(t), new state</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">transition can be added and removed later.<span class="Apple-converted-space"> </span></font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">A DEBUG-like method called silent is included to prevent wise-guy remarks</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">about things you shouldn't be doing.<span class="Apple-converted-space"> </span></font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">USAGE EXAMPLES:</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-------------------------------------------------------------------------------<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">FSM = require "fsm"</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">function action1() print("Performing action 1") end</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">function action2() print("Performing action 2") end</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- Define your state transitions here</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">local myStateTransitionTable = {</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{"state1", "event1", "state2", action1},</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{"state2", "event2", "state3", action2},</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{"*",<span class="Apple-converted-space">      </span>"event3", "state2", action1},<span class="Apple-converted-space">  </span>-- for any state</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1"><span class="Apple-tab-span">	</span>{"*",<span class="Apple-converted-space"> <span class="Apple-tab-span">	</span>   </span>"*",<span class="Apple-tab-span">	</span> <span class="Apple-converted-space">    </span>"state2", action2} <span class="Apple-converted-space">  </span>-- exception handler</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">}</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- Create your finite state machine</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">fsm = FSM.new(myStateTransitionTable)</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- Use your finite state machine<span class="Apple-converted-space"> </span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- which starts by default with the first defined state</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">print("Current FSM state: " .. fsm:get())</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- Or you can set another state</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">fsm:set("state2")<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">print("Current FSM state: " .. fsm:get())</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-- Resond on "event" and last set "state"</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">fsm:fire("event2")</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">print("Current FSM state: " .. fsm:get())</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Output:</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-------</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Current FSM state: state1</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Current FSM state: state2</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Performing action 2</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Current FSM state: state3</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">REMARKS:</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">-------------------------------------------------------------------------------</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Sub-states are not supported by additional methods to keep the code simple.</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">If you need sub-states, you can create them as 'state.substate' directly.</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">A specific remove method is not provided because I didn't need one (I think)</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">But feel free to implement one yourself :-)</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">One more thing, did I already mentioned that I am new to Lua?</font></p>
+<p class="p1"><font face="Consolas" size="4" color="#333333" class="f1">Well, I learn a lot of other examples, so do not forget yours.<span class="Apple-converted-space"> </span></font></p>
+</body>
+</html>

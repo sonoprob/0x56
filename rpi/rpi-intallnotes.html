@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer" />
+  <meta name="CocoaVersion" content="1344.72" />
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'OCR A Std'; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; background-color: #f2f1f0}
+    font.f1 {font: 12.0px 'OCR A Std'; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    font.f2 {font-kerning: none}
+    font.f3 {font: 12.0px 'OCR A Std'; font-kerning: none; color: #0000ee; -webkit-text-stroke: 0px #0000ee}
+    font.f4 {font: 11.0px 'OCR A Std'; font-kerning: none; color: #fcf8ff; background-color: #000000; -webkit-text-stroke: 0px #fcf8ff}
+    font.f5 {font: 12.0px 'OCR A Std'; font-kerning: none; -webkit-text-stroke: 0px #000000}
+    font.f6 {font: 12.0px 'OCR A Std'; font-kerning: none}
+    font.f7 {font: 23.0px Times; font-kerning: none; color: #0000ee; -webkit-text-stroke: 0px #0000ee}
+    font.f8 {font: 23.0px Times; font-kerning: none; color: #323333; -webkit-text-stroke: 0px #323333}
+    font.f9 {font: 14.0px Courier; font-kerning: none; color: #232323; -webkit-text-stroke: 0px #232323}
+    font.f10 {font: 16.0px Times; font-kerning: none; color: #232323; background-color: #e6e2dd; -webkit-text-stroke: 0px #232323}
+  </style>
+</head>
+<body>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">RPI INSTALL NOTES</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">--- INSTALL IMAGE<br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><a href="https://www.raspberrypi.org/downloads/raspbian/"><u>https://www.raspberrypi.org/downloads/raspbian/</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><u>https://www.raspberrypi.org/documentation/</u></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><u>https://www.raspberrypi.org/documentation/installation/installing-images/mac.md</u></font></p>
+<p class="p3"><font class="f2"></font><br /></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">flash image to an unmounted (not ejected), fat formatted disk</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#fcf8ff" class="f4">dd bs=1m if=/Users/a/dev/raspberrypi/2015-09-24-raspbian-jessie.img of=/dev/rdisk2</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">Control-T to see progress<br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" class="f5">disk2s1</font></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p2"><font class="f2"></font><br /></p>
+<p class="p1"><font face="OCR A Std" size="3" class="f6">--- SSH</font><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font><font face="OCR A Std" size="3" class="f5">https://www.raspberrypi.org/documentation/remote-access/ssh/README.md</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">--- motion track</font></p>
+<p class="p1"><font face="Times" size="6" color="#0000ee" class="f7"><a href="https://www.raspberrypi.org/documentation/hardware/camera.md"><u>https://www.raspberrypi.org/documentation/hardware/camera.md</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="Times" size="6" color="#323333" class="f8">https://www.raspberrypi.org/documentation/configuration/camera.md</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">Vehicle Speed Camera using openCV, python &amp; picamera</font></p>
+<p class="p4"><font face="Courier" size="4" color="#232323" class="f9">https://www.raspberrypi.org/forums/viewtopic.php?p=813535#p813535</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><a href="https://github.com/pageauc"><u>https://github.com/pageauc</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><a href="http://www.instructables.com/id/Raspberry-Pi-Ball-tracking/"><u>http://www.instructables.com/id/Raspberry-Pi-Ball-tracking/</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><a href="https://github.com/pageauc"><u>https://github.com/pageauc</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">---</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">usb wifi dongle</font><font face="Times" size="5" color="#232323" class="f10">BCM43143 chipset </font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">---</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">gpio</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#0000ee" class="f3"><a href="http://www.bashmodulo.com/raspberrypi/simple-circuit-control-with-gpio-on-raspberry-pi/"><u>http://www.bashmodulo.com/raspberrypi/simple-circuit-control-with-gpio-on-raspberry-pi/</u><font class="f2"><u></u></font></a></font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1"><br />
+</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">---</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">autostart</font></p>
+<p class="p1"><font face="OCR A Std" size="3" color="#000000" class="f1">http://www.bashmodulo.com/raspberrypi/raspberry-pi-auto-start-program-with-auto-login/</font></p>
+</body>
+</html>

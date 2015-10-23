@@ -1,0 +1,87 @@
+gpio = {[0]=3,[1]=10,[2]=4,[3]=9,[4]=1,[5]=2,[10]=12,[12]=6,[14]=5,[15]=8,[16]=0}
+
+pin = gpio[2] -- connect the signal wire to pin 4
+
+-- tone(2, 300)
+-- stoptone(2)
+-- ws2812.writergb(4, string.char(math.random(0,3)*100, 0, math.random(0,2)*100))
+-- ws2812.writergb(4, string.char(255, 0, math.random(0,2)*100))
+-- ws2812.writergb(4, string.char(0, math.random(0,2)*100, 0))
+
+-- no infinite timers !
+-- use nested timers
+-- irc hooks
+-- sta table with events reactions
+-- talking
+-- soundLightSequence1(3, 2, 4, 1, 3) -- tmrid, spin, lpin, speed, amt
+-- soundLightSequence2(3, 2, 4, 4, 12, 100) -- tmrid, spin, lpin, speed, amt, rootfreq
+-- start reacting
+-- debug = true
+-- dofile('ircoverload.lua')
+-- tmr.stop(3)
+-- pwm.stop(2)
+-- pwm.setduty(2, 1)
+-- pwm.setduty(2, 512)
+
+
+
+
+-- soundLightSequence1(2, 2, 4, 1) -- tmrid, spin, lpin, speed
+-- dofile('play.lua') -- tmr 3
+
+-- tmr.stop(3)
+-- pwm.stop(2)
+-- pwm.setduty(2, 1)
+-- pwm.setduty(2, 512)
+
+-- getRandWord(8)
+-- ws2812.writergb(4, string.char(0, 0, 0))
+
+
+function sayrepeat(tmrid, string, amt)
+    d = 10
+    tmr.alarm(tmrid, 1000 * d, 1, function() 
+        if ready == true and dead == false then        
+            -- send_message(chnl, string .. ' ' .. math.random(100,999))
+            send_message('#bschan', string .. ' ' .. math.random(100,999))
+        end
+        if amt == 0 then
+            tmr.stop(tmrid)
+        else
+            amt = amt - 1
+        end            
+    end)
+end
+
+function getRandWord( length )
+    str = ''
+    for i=0, 6 do
+        str = str .. string.char(math.random(0, 255))
+    end
+    return str
+end
+
+function connectPulsecode( tmrID )
+    connectIRC( tmrID, "78.47.95.83", 4567 )
+    -- sayrepeat(5, getRandWord(math.random(3,20)), 5)
+    
+end
+
+
+
+/////////
+
+function handle_message(usr, chnl, msg)
+    if chnl == nick then chnl = usr end
+    if debug == true then
+        print("Message from " .. usr .. " in " .. chnl .. ": " .. msg)
+    end
+    if msg:find(nick) then
+        send_message(chnl, "hi" .. usr)
+        -- send_message(chnl, usr .. ": hey")
+    elseif msg:find("~") == 1 then
+        local cmd = split(msg)
+        handle_command(chnl, cmd[1]:sub(2), {select(2, unpack(cmd))})
+    end
+end
+

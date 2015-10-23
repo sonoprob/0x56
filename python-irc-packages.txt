@@ -1,0 +1,245 @@
+
+
+pinibot.py 57120 p1n2 78.47.95.83:4567
+Usage: pinibot.py (optional arguments: [OSC port, nickname, server])
+no arguments, using defaults:
+OSC port:	57120
+nickname:	p1n2
+connected to:	127.0.0.1
+
+./testbot.py 78.47.95.83:4567 bschan iwuds
+
+pyborg                    - Markov chain bot for irc which generates replies to messages
+
+vsi:py a$ pip search irc
+cengbot2                  - Simple Python irc bot
+AsyncIRC                  - Dependancy-free Asynchronous IRC Library
+ircnotifier               - Python IRC Notifier Daemon with RESTful API using circuits
+pylirc                    - Python lirc module. See http://www.lirc.org for more info on lirc
+muirc                     - Micro IRC client
+pycri                     - IRC-bot
+limnoria                  - A modified version of Supybot (an IRC bot and framework)
+minirc                    - An asyncio based IRC library for Python 3
+python-irclib             - IRC client library
+vhostino                  - Virtual Hosts Plugin for Mozilla Circus
+boek                      - BOEK - XMPP - IRC - CLI - RSS - UDP - API
+tornado_circus            - A tornado application compatible with circus socket
+ircstat                   - generate statistics and graphs from IRC channel logs
+FredIRC                   - An easy-to-use, event driven framework for IRC bots.
+pypirc                    - PyPiRC: .pypirc Manager
+nekbot.protocols.irc      - IRC Protocol for Nekbot, a modular multiprotocol bot.
+Circe                     - A IRC client written in Python
+thealot                   - A lightweight IRC bot framework.
+python-circuit            - Simple implementation of the Circuit Breaker pattern
+CengBot                   - Simple Python IRC Bot
+aioirc                    - AsyncIO IRC Library for >= Python 3.3
+Beacon                    - Python IRC bot for Python 3
+tornado-irc               - UNKNOWN
+wet                       - XMPP - IRC - CLI - RSS - UDP - REST
+ircutils3                 - IRC framework and utilities. Great for bot creation.
+Yapil                     - Yet another python IRC lib
+irco                      - International Research Collaboration Graphs
+seshet                    - Modular, dynamic IRC bot
+Gnotty                    - Gnotty ties the knot between the web and IRC. It is a web client and
+                            message archive for IRC.
+Pypeul                    - A Python 3 IRC library thought for the programmer.
+irclib                    - 
+fc.agent                  - Local configuration utilities and helper APIs for flyingcircus.io system
+                            configuration.
+pydle                     - A compact, flexible and standards-abiding IRC library for Python 3.
+quirc                     - ctypes wrapper for QR code decoding library `libquirc`
+sopel                     - Simple and extendible IRC bot
+otfbot                    - a modular IRC-Bot
+ipython-irc               - An IRC iframe using webchat.freenode.net
+berend                    - Extensible IRC bot
+csFIFO                    - A simple cStringIO based FIFO, implemented as a circular buffer
+mediorc                   - Mediorc IRC Bot Helpers Library
+ircu                      - 
+Reaktor                   - an IRC bot based on asyn* libs
+circbuf                   - A fast, zero-copy, circular buffer for Python
+chaussette                - A WSGI Server for Circus
+uttt_irc                  - An IRC bot using the uttt package
+helga-contrib-updates     - A helga plugin to list and record IRC channel updates.
+lala                      - IRC bot based on the twisted framework
+PySpice                   - PySpice is a Python 3 Package to generate and steer Berkeley Spice circuit,
+                            to simulate them and finally analyse the output using Python.
+ircmdbot                  - Simple IRC bot for running aliased shell commands
+gerritbot                 - Gerrit IRC Bot
+gorillabot                - An easily-extensible IRC bot.
+pmxbot                    - IRC bot - full featured, yet extensible and customizable
+pylirc2                   - Python lirc module. See http://www.lirc.org for more info on lirc and
+                            https://launchpad.net/pylirc2 for up-to-date code
+FatBotSlim                - Yet another IRC bot library
+Parasha                   - An embeddable IRC server
+irclogger                 - Python IRC Logger Daemon
+botje                     - xmpp, irc, shell, cli, json
+irc-pyhole                - A modular IRC bot for Python developers.
+tenyksclient              - A client base for Tenyks IRC bot
+supybot                   - A flexible and extensible Python IRC bot and framework.
+cmdbot-evented            - An IRC Bot with a `cmd` attitude
+oyoyo                     - a fast, simple irc module suitable for clients, bots and games
+oordeel                   - XMPP, IRC, CLI, UDP, HTTP, UDP, RSS, EMAIL
+kdb                       - Knowledge (IRC) Database Bot
+pysimpirc                 - Simple IRC module
+Circuitscape              - Circuitscape borrows algorithms from electronic circuit theory to predict
+                            patterns of movement, gene flow, and genetic differentiation among plant
+                            and animal populations in heterogeneous landscapes.
+conductance               - circuit algorithm and graph metric
+girc                      - A modern Python IRC library for Python 3.4, based on asyncio. In
+                            Development.
+circonus                  - Interact with the Circonus REST API.
+eircom_nga_apt_tool       - Eircom NGA APT Config Generator
+lalita                    - Yet another IRC bot.
+hamper                    - Yet another IRC bot
+irc_con                   - A simple IRC connector(No support for SSL/ident)
+pynfo                     - IRC Info/Search/Relay bot
+bottom                    - asyncio-based rfc2812-compliant IRC Client
+asyncio-irc               - irc based on asyncio
+reddit_irc                - A tool to post new subreddit submissions to IRC channels.
+alebot                    - A super lean and highly modularized irc bot
+possel-server             - Python-based IRC "bouncer", requires custom clients for scrollback.
+orbited                   - A browser(javascript)->tcp bridge; Comet is used to emulate TCP connections
+                            in the browser; Allows you to connect a web browser directly to an IRC or
+                            XMPP server, for instance.
+transbot                  - Inter-channel IRC automatic translation bot using Google Translate API
+irc                       - IRC (Internet Relay Chat) protocol client library for Python
+willie                    - Simple and extendible IRC bot
+zenircbot_api             - API for ZenIRCBot
+helga-newrelic            - IRC bot using twisted
+circonusapi               - Circonus API library
+easyirc                   - Easy IRC is an IRC toolkit to develop IRC client or bot, especially for
+                            Python/IRC beginner.
+nicedice                  - Dice roller with IRC color codes
+sahriswiki                - A Lightweight Wiki / CMS / Blogging Engine using circuits.web
+django-overextends        - A Django reusable app providing the ability to use circular template
+                            inheritance.
+buzzer_as_a_service       - IRC Bot to play an audible buzzer sound
+ircmess                   - Simple and fast IRC line parser
+artie                     - IRC utility robot framework for Python
+requests-circuit          - A circuit breaker for Python requests
+toastbot                  - A clean, extensible IRC bot using irckit.
+saxo                      - Quick and flexible irc bot, extensible in any language
+chausette                 - A WSGI Server extension for Circus -- prototype do not use
+ircnotify                 - 
+python-dircmp             - 
+pyringbuf                 - A circular/ring buffer written in C
+pywinlirc                 - A Winamp controller written in Python, designed to be used with WinLirc
+drf-chaos                 - Collection of decorators and middlewares for testing DRF API under
+                            unexpected circumstances.
+botf                      - BOTF - CLI, XMPP, IRC, UDP, RSS, REST, SPIDER
+botz                      - BOTZ - CLI, XMPP, IRC, UDP, RSS, REST, SPIDER
+pybreaker                 - Python implementation of the Circuit Breaker pattern
+humphrey                  - An IRC client with no dependencies
+ircutils                  - IRC framework and utilities. Great for bot creation.
+mtirc                     - A fully functioning multi-threaded IRC client.
+ringmaster                - Circus Tcl/Tk Control Panel
+blamehangle               - Yet Another IRC Bot Framework
+pyfibot                   - Python IRC bot
+irc3-pugbot               - TF2 Pug irc bot
+pugbot_ng                 - Urban Terror PUG IRC bot.
+tircd                     - 
+dirk                      - Provide a bridge between Django and IRC.
+irclog2html               - Convert IRC logs to HTML
+pyptlib                   - A python implementation of the Pluggable Transports for Circumvention
+                            specification for Tor
+nerdirc                   - A modular ircclient
+JustIRC                   - An event-driven IRC library
+jeeves-framework          - A Python IRC Bot Framework. Easily create IRC bots with a single command
+earwigbot                 - EarwigBot is a Python robot that edits Wikipedia and interacts with people
+                            over IRC.
+ircpdb                    - Remotely and collaboratively debug your Python application via IRC
+pyrun                     - A convenient way to run python modules, packages and scripts with a
+                            dynamically discovered sys.path. Particularly useful when you want to make
+                            use of packages without installing them first, or to circumvent
+                            bootstrapping issues with complicated collections of python software.
+omnipresence              - An IRC utility bot
+SchemDraw                 - Electrical circuit schematic drawing
+pycirculate               - A Python wrapper for the Anova 2.
+shout                     - shout - when you need to report circumstances that need to be mentioned.
+leastbot                  - leastbot - Least Authority ircbot / webhook thingy.
+vircd                     - 
+pr0ntools                 - Integrated circuit reverse engineering research and development
+pyaib                     - Python Framework for writing IRC Bots using gevent
+barkeep                   - yet another irc client
+irc-toolkit               - A Python IRC client library
+dsat                      - DSAT Distributed satellite tools ================================  DSAT is
+                            a framework for handling and connecting distributed writers and producers.
+                            It also provides an integration with circus a way to monitor and handle
+                            your processes.   Changelog =========  Version 0.5     Alpha  Version 0.6
+                            adding parse_mesg     migrating to tornado event loops in ssat requires
+                            change in DSAT
+circus-logstash           - A Logstash shipper for Circus
+appleremote.py            - A simple script to interface LIRC using the macmini driver with MythTV
+                            running the remote control interface.
+kaoz                      - A simple IRC notifier bot.
+irc3                      - plugable irc client library based on asyncio
+oor                       - XMPP - IRC - CLI - RSS - UDP - API.
+circus-env-modifier       - Mozilla Circus hook for modifying environment with an external command.
+pnc                       - PNC is not your typical IRC bouncer
+simpleirc                 - A simple IRC library.
+PyBot                     - Python IRC Bot
+blancmange                - Determine what's missing from Python by using Monty Python's Flying Circus.
+rtorrent-notify           - Notify of rtorrent events, through RSS or IRC (using Irker)
+duxlot                    - IRC bot and data suite, by the maker of phenny
+relay-framework           - Relay is an irc micro-framework that smells too much like a web framework
+cmdbot                    - An IRC Bot with a `cmd` attitude
+circuits                  - Asynchronous Component based Event Application Framework
+circuits-minpor           - A minimal portal based on the circuits component library.
+PyIRC                     - A Python IRC library
+Ring-Buffer               - A circular/ring buffer written in C
+onion-proctor             - Proctor is an HTTP proxy that will distribute requests across a number of
+                            managed Tor circuits
+pircel                    - Simple IRC client library
+yapybot                   - yet another python irc bot
+pysprites                 - A mirco python tools for sprite image, support Photoshop layer data
+interstat                 - An HTML formatter for IRC log files
+toeplitz                  - Python wrapper for Fortran90 toeplitz package to solve a variety of
+                            Toeplitz and circulant linear systems
+gozerbot                  - irc bot and xmpp bot in one
+pircly                    - An IRC Logging Bot
+tenyks                    - Redis powered IRC bot
+luckystrike               - IRC to Campfire Bridge
+Shitman                   - Yet Another IRC bot
+piebot                    - A python IRC bot with an easy plugin API.
+sentry-irccat             - A Sentry extension which integrates with irccat
+IrcTK                     - A simple framework for IRC apps
+pyIrcServer               - Powerful, very personalizable and multiplatform IRCd
+ircbot                    - a rather simple echo irc bot to stand as a simple example of how this could
+                            be done.
+pyIRCbot                  - Python IRC Bot
+PyOPUS                    - Simulation, optimization, and design for circuits and everything else
+ircmatch                  - library for matching IRC masks based on atheme
+DeCiDa                    - Device and Circuit Data Analysis
+irclog                    - The web IRC loger view.
+PyTalk                    - Software to change Speech to Text and post to an IRC channel
+circular                  - Visualize the latest circular from the Somerville Market Basket
+fhirclient                - A flexible client for FHIR servers supporting the SMART on FHIR protocol
+blackbox                  - A Python module to abstract and encapsulate the IRC protocol
+HanabIRC                  - An IRC bot that organizes and plays the card game Hanabi.
+sentry-irc                - A Sentry extension which integrates with IRC
+grazyna                   - Grazyna The irc bot
+chatterbox                - Chatterbox is simple framework for IRC Bot.
+irckit                    - tinkering with a made-from-scratch irc library in python
+lcapy                     - Symbolic linear circuit analysis
+simple_irc                - A simple, Pythonic IRC interface
+ahkab                     - a SPICE-like electronic circuit simulator
+CslBot                    - An easily extensible, modular irc bot.
+lurklib                   - Event-driven IRC library.
+redirbot                  - IRCBot, telling people they should contact you on different nickname
+KitnIRC                   - IRC bot framework
+prettify                  - IRC log prettifier
+helga-prod-fixer          - IRC bot using twisted
+pyrc                      - Simple, clean Python IRC library
+Douglbutt                 - Simple, extensible irclib based IRC bot.
+cored                     - CORE - CLI, XMPP, IRC, UDP, RSS, REST, SPIDER
+irccat3                   - IRCCat in Python
+circus-web                - Circus Web Dashboard
+strawberries              - Strawberries is an IRC bot, and also the plural of the word "strawberry".
+python-lirc               - Python bindings for LIRC.
+django-telegram           - A messaging framework that supports email, irc, notify my android and
+                            others
+Pyromancer                - Simple framework for creating IRC bots
+tenyks-contrib            - Contributed services for the tenyks IRC bot
+circuits-bricks           - General purpose components extending the circuits framework.
+basebot                   - a base IRC bot extensible with plugins
+gitorious-mrq-monitor     - Monitor Gitorious merge requests over IRC
